@@ -6,15 +6,16 @@
       "use": "@vercel/node"
     }
   ],
-   "routes": [
-        {
-          "src": "/(.*)",
-          "dest": "/"
-        }
-   ], 
+  "rewrites": [
+    {
+      "source": "/(.*)",
+      "destination": "/"
+    }
+  ],
   "env": {
-    "NEXT_PUBLIC_API_URL": "https://amazon-clone-sneha-ghosh-techisopod.vercel.app/api",
-  "STRIPE_SECRET_KEY": "sk_test_placeholder",
-  "NEXTAUTH_URL": "https://amazon-clone-sneha-ghosh-techisopod.vercel.app/"
+    "NEXT_PUBLIC_API_URL": "https://example.com/api",
+    "STRIPE_SECRET_KEY": "@stripe-secret-key",
+    "NEXTAUTH_URL": "https://your-vercel-domain.vercel.app"
   }
 }
+  
