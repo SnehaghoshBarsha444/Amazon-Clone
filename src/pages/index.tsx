@@ -1,4 +1,4 @@
-{/*
+/*
 import React, { useEffect } from "react";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import HeaderBottom from "@/components/header/HeaderBottom";
@@ -75,7 +75,7 @@ export const getServerSideProps = async () => {
   const productData = await res.json();
   return { props: { productData } };
 };
-*/}
+*/
 
 
 import HeaderBottom from "@/components/header/HeaderBottom";
