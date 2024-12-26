@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Carousel } from 'react-responsive-carousel';
 import 'react-responsive-carousel/lib/styles/carousel.min.css';
 import Image from "next/image";
@@ -13,31 +13,51 @@ interface Props {
 }
 
 export default function Home({ productData }: Props) {
-  console.log(productData);
+  useEffect(() => {
+    const right = document.querySelector(".right-btn");
+    const left = document.querySelector(".left-btn");
+
+    right?.addEventListener("click", function(event) {
+      const content = document.querySelector(".slide-carousel");
+      content.scrollLeft += 1100;
+      event.preventDefault();
+    });
+
+    left?.addEventListener("click", function(event) {
+      const content = document.querySelector(".slide-carousel");
+      content.scrollLeft -= 1100;
+      event.preventDefault();
+    });
+  }, []);
+
   return (
     <main>
       <div className="max-w-screen-2xl mx-auto">
         {/* Carousel Implementation */}
-        <div className="relative">
-          <Carousel autoPlay infiniteLoop showStatus={false} showIndicators={false} interval={3000}>
-            <div><img src="/amazon assets/bed1.png" alt="bed1" /></div>
-            <div><img src="/amazon assets/bed2.png" alt="bed2" /></div>
-            <div><img src="/amazon assets/bed3.png" alt="bed3" /></div>
-            <div><img src="/amazon assets/bed4.png" alt="bed4" /></div>
-            <div><img src="/amazon assets/bed5.png" alt="bed5" /></div>
-            <div><img src="/amazon assets/bed6.png" alt="bed6" /></div>
-            <div><img src="/amazon assets/bed7.png" alt="bed7" /></div>
-            <div><img src="/amazon assets/bed8.png" alt="bed8" /></div>
-            <div><img src="/amazon assets/bed9.png" alt="bed9" /></div>
-            <div><img src="/amazon assets/bed10.png" alt="bed10" /></div>
-            <div><img src="/amazon assets/bed11.png" alt="bed11" /></div>
-            <div><img src="/amazon assets/bed12.png" alt="bed12" /></div>
-            <div><img src="/amazon assets/bed13.png" alt="bed13" /></div>
-            <div><img src="/amazon assets/bed14.png" alt="bed14" /></div>
-            <div><img src="/amazon assets/bed16.png" alt="bed16" /></div>
-            <div><img src="/amazon assets/bed17.png" alt="bed17" /></div>
-            <div><img src="/amazon assets/bed18.png" alt="bed18" /></div>
+        <div className="relative carousel">
+          <h1 className="carousel-head">Upto 45 % off | Beds and mattresses</h1>
+          <div className="left-btn"><i className="fa-solid fa-chevron-left"></i></div>
+          <div className="right-btn"><i className="fa-solid fa-chevron-right"></i></div>
+          <ul className="slide-carousel">
+            <li><img src="/amazon assets/bed1.png" className="slide-img" alt="bed1" /></li>
+            <li><img src="/amazon assets/bed2.png" className="slide-img" alt="bed2" /></li>
+            <div><img src="/amazon assets/bed3.png" className="slide-img" alt="bed3" /></div>
+            <div><img src="/amazon assets/bed4.png" className="slide-img" alt="bed4" /></div>
+            <div><img src="/amazon assets/bed5.png" className="slide-img" alt="bed5" /></div>
+            <div><img src="/amazon assets/bed6.png" className="slide-img" alt="bed6" /></div>
+            <div><img src="/amazon assets/bed7.png" className="slide-img" alt="bed7" /></div>
+            <div><img src="/amazon assets/bed8.png" className="slide-img" alt="bed8" /></div>
+            <div><img src="/amazon assets/bed9.png" className="slide-img" alt="bed9" /></div>
+            <div><img src="/amazon assets/bed10.png" className="slide-img" alt="bed10" /></div>
+            <div><img src="/amazon assets/bed11.png" className="slide-img" alt="bed11" /></div>
+            <div><img src="/amazon assets/bed12.png" className="slide-img" alt="bed12" /></div>
+            <div><img src="/amazon assets/bed13.png" className="slide-img" alt="bed13" /></div>
+            <div><img src="/amazon assets/bed14.png" className="slide-img" alt="bed14" /></div>
+            <div><img src="/amazon assets/bed16.png" className="slide-img" alt="bed16" /></div>
+            <div><img src="/amazon assets/bed17.png" className="slide-img" alt="bed17" /></div>
+            <div><img src="/amazon assets/bed18.png" className="slide-img" alt="bed18" /></div>
           </Carousel>
+          </ul>
         </div>
         {/* Other Components */}
         <div className="relative md:-mt020 lgl:-mt-32 xl:-mt-60 z-20 mb-10">
