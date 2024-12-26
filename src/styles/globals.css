@@ -3,3 +3,98 @@
 @tailwind components;
 @tailwind utilities;
 
+
+/* Carousel CSS */
+.auto-carousel {
+    position: relative;
+    animation-name: slide;
+    animation-duration: 20s;
+    animation-iteration-count: infinite;
+    width: 100%;
+    display: flex;
+    height: 40vh;
+    transition: all 1s ease;
+    margin-top: -0.5rem;
+}
+@keyframes slide {
+    0% { left:0%; }
+    5% { left:-100%; }
+    20% { left:-100%; }
+    25% { left:-200%; }
+    40% { left:-200%; }
+    45% { left:-300%; }
+    60% { left:-300%; }
+    65% { left:-400%; }
+    80% { left:-400%; }
+    85% { left:-500%; }
+    100% { left:-500%; }
+}
+.slide {
+    height: 45vh;
+}
+.slide img {
+    height: 45vh;
+    width: 100vw;
+}
+ol {
+    list-style: none;
+}
+.multi-img-sec {
+    display: flex;
+}
+.multi-img {
+    width: 30wv;
+    background-color: white;
+    margin: 1rem;
+}
+.multi-head {
+    font-size: 1.2rem;
+    margin-left: 1rem;
+}
+.single-multi {
+    width: 8vw;
+    display: inline-block;
+    margin: 1rem;
+}
+.single-multi img {
+    width: 9vw;
+    height: 6rem;
+}
+.carousel {
+    width: 100%;
+    background-color: white;
+    padding: 2rem 0rem;  
+}
+.carousel-head {
+    font-size: 1.5rem;
+    margin-left: 1.5rem;
+}
+.left-btn {
+    height: 20vh;
+    width: 20px;
+    text-align: center;
+    cursor: pointer;
+    position: absolute;
+}
+.right-btn {
+    height: 20vh;
+    width: 50px;
+    text-align: center;
+    cursor: pointer;
+    position: absolute;
+    right: 10px;
+}
+.right-btn i, .left-btn i {
+    color: rgb(54, 54, 54);
+    font-size: 30px;
+    position: absolute;  
+    top: 50%;
+}
+.slide-carousel {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    list-style: none;
+    overflow-x: scroll;
+    scroll-behavior: smooth;
+}
