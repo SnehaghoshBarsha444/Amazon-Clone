@@ -1,3 +1,4 @@
+{/*
 import React, { useEffect } from "react";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import HeaderBottom from "@/components/header/HeaderBottom";
@@ -39,7 +40,7 @@ export default function Home({ productData }: Props) {
   return (
     <main>
       <div className="max-w-screen-2xl mx-auto">
-        {/* Carousel Section */}
+        
         <div className="relative carousel">
           <h1 className="carousel-head">Upto 45% off | Beds and mattresses</h1>
           <button className="left-btn absolute top-1/2 left-2 transform -translate-y-1/2 bg-gray-200 rounded-full p-2">
@@ -60,7 +61,7 @@ export default function Home({ productData }: Props) {
             ))}
           </ul>
         </div>
-        {/* Other Components */}
+        
         <div className="relative md:mt-10 lgl:mt-20 xl:mt-40 z-20 mb-10">
           <Products productData={productData} />
         </div>
@@ -74,3 +75,36 @@ export const getServerSideProps = async () => {
   const productData = await res.json();
   return { props: { productData } };
 };
+*/}
+
+
+import HeaderBottom from "@/components/header/HeaderBottom";
+import Header from "@/components/header/Header"
+import Footer from "@/components/Footer";
+import Banner from "@/components/Banner";
+import Products from "@/components/Products";
+import {ProductProps} from "../../type"
+
+interface Props{
+  productData: ProductProps;
+}
+export default function Home({productData}: Props) {
+  console.log(productData);
+  return (
+    <main>
+      
+      <div className="max-w-screen-2xl mx-auto">
+        <Banner/>
+        <div className="relative md:-mt020 lgl:-mt-32 xl:-mt-60 z-20 mb-10">
+        <Products productData={productData}/>
+        </div>
+      </div>
+      
+    </main>
+  );
+}
+export const getServerSideProps = async() =>{
+  const res = await fetch("https://fakestoreapi.com/products")
+  const productData = await res.json();
+  return {props: {productData}};
+}
