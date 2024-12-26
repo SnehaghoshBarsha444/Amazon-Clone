@@ -1,8 +1,20 @@
 {
+  "version": 2,
+  "builds": [
+    {
+      "src": "src/pages/index.tsx",
+      "use": "@vercel/node"
+    }
+  ],
   "rewrites": [
     {
       "source": "/(.*)",
-      "destination": "/src/pages/index.tsx"
+      "destination": "src/pages/index.tsx"
     }
-  ]
+  ],
+  "env": {
+    "NEXT_PUBLIC_API_URL": "https://example.com/api",
+    "STRIPE_SECRET_KEY": "@stripe-secret-key",
+    "NEXTAUTH_URL": "https://your-vercel-domain.vercel.app"
+  }
 }
