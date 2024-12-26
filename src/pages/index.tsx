@@ -1,7 +1,5 @@
 import React, { useEffect } from "react";
-import { Carousel } from 'react-responsive-carousel';
-import 'react-responsive-carousel/lib/styles/carousel.min.css';
-import Image from "next/image";
+import "react-responsive-carousel/lib/styles/carousel.min.css";
 import HeaderBottom from "@/components/header/HeaderBottom";
 import Header from "@/components/header/Header";
 import Footer from "@/components/Footer";
@@ -17,49 +15,53 @@ export default function Home({ productData }: Props) {
     const right = document.querySelector(".right-btn");
     const left = document.querySelector(".left-btn");
 
-    right?.addEventListener("click", function(event) {
-      const content = document.querySelector(".slide-carousel");
-      content.scrollLeft += 1100;
+    const handleRightClick = (event: Event) => {
+      const content = document.querySelector(".slide-carousel") as HTMLElement;
+      if (content) content.scrollLeft += 1100;
       event.preventDefault();
-    });
+    };
 
-    left?.addEventListener("click", function(event) {
-      const content = document.querySelector(".slide-carousel");
-      content.scrollLeft -= 1100;
+    const handleLeftClick = (event: Event) => {
+      const content = document.querySelector(".slide-carousel") as HTMLElement;
+      if (content) content.scrollLeft -= 1100;
       event.preventDefault();
-    });
+    };
+
+    right?.addEventListener("click", handleRightClick);
+    left?.addEventListener("click", handleLeftClick);
+
+    return () => {
+      right?.removeEventListener("click", handleRightClick);
+      left?.removeEventListener("click", handleLeftClick);
+    };
   }, []);
 
   return (
     <main>
       <div className="max-w-screen-2xl mx-auto">
-        {/* Carousel Implementation */}
+        {/* Carousel Section */}
         <div className="relative carousel">
-          <h1 className="carousel-head">Upto 45 % off | Beds and mattresses</h1>
-          <div className="left-btn"><i className="fa-solid fa-chevron-left"></i></div>
-          <div className="right-btn"><i className="fa-solid fa-chevron-right"></i></div>
-          <ul className="slide-carousel">
-            <li><img src="amazon assets/bed1.png" className="slide-img" alt="bed1" /></li>
-            <li><img src="amazon assets/bed2.png" className="slide-img" alt="bed2" /></li>
-            <li><img src="amazon assets/bed3.png" className="slide-img" alt="bed3" /></li>
-            <li><img src="amazon assets/bed4.png" className="slide-img" alt="bed4" /></li>
-            <li><img src="amazon assets/bed5.png" className="slide-img" alt="bed5" /></li>
-            <li><img src="amazon assets/bed6.png" className="slide-img" alt="bed6" /></li>
-            <li><img src="amazon assets/bed7.png" className="slide-img" alt="bed7" /></li>
-            <li><img src="amazon assets/bed8.png" className="slide-img" alt="bed8" /></li>
-            <li><img src="amazon assets/bed9.png" className="slide-img" alt="bed9" /></li>
-            <li><img src="amazon assets/bed10.png" className="slide-img" alt="bed10" /></li>
-            <li><img src="amazon assets/bed11.png" className="slide-img" alt="bed11" /></li>
-            <li><img src="amazon assets/bed12.png" className="slide-img" alt="bed12" /></li>
-            <li><img src="amazon assets/bed13.png" className="slide-img" alt="bed13" /></li>
-            <li><img src="amazon assets/bed14.png" className="slide-img" alt="bed14" /></li>
-            <li><img src="amazon assets/bed16.png" className="slide-img" alt="bed16" /></li>
-            <li><img src="amazon assets/bed17.png" className="slide-img" alt="bed17" /></li>
-            <li><img src="amazon assets/bed18.png" className="slide-img" alt="bed18" /></li>
+          <h1 className="carousel-head">Upto 45% off | Beds and mattresses</h1>
+          <button className="left-btn absolute top-1/2 left-2 transform -translate-y-1/2 bg-gray-200 rounded-full p-2">
+            <i className="fa-solid fa-chevron-left"></i>
+          </button>
+          <button className="right-btn absolute top-1/2 right-2 transform -translate-y-1/2 bg-gray-200 rounded-full p-2">
+            <i className="fa-solid fa-chevron-right"></i>
+          </button>
+          <ul className="slide-carousel flex overflow-x-auto scroll-smooth space-x-4">
+            {Array.from({ length: 18 }, (_, i) => (
+              <li key={i} className="flex-shrink-0">
+                <img
+                  src={`/amazon assets/bed${i + 1}.png`}
+                  className="slide-img w-64 h-64 object-cover"
+                  alt={`bed${i + 1}`}
+                />
+              </li>
+            ))}
           </ul>
         </div>
         {/* Other Components */}
-        <div className="relative md:-mt020 lgl:-mt-32 xl:-mt-60 z-20 mb-10">
+        <div className="relative md:mt-10 lgl:mt-20 xl:mt-40 z-20 mb-10">
           <Products productData={productData} />
         </div>
       </div>
