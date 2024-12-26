@@ -1,20 +1,5 @@
 {
-  "version": 2,
-  "builds": [
-    {
-      "src": "package.json",
-      "use": "@vercel/node"
-    }
-  ],
   "rewrites": [
-    {
-      "source": "/(.*)",
-      "destination": "src/pages/index.tsx"
-    }
-  ],
-  "env": {
-    "NEXT_PUBLIC_API_URL": "https://amazon-clone-sneha-ghosh-techisopod.vercel.app/api",
-  "STRIPE_SECRET_KEY": "sk_test_placeholder",
-  "NEXTAUTH_URL": "https://amazon-clone-sneha-ghosh-techisopod.vercel.app/"
-  }
+    { "source": "/(.*)", "destination": "/" }
+  ]
 }
