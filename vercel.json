@@ -12,12 +12,6 @@
           "dest": "/"
         }
    ], 
-  "rewrites": [
-    {
-      "source": "/(.*)",
-      "destination": "/"
-    }
-  ],
   "env": {
     "NEXT_PUBLIC_API_URL": "https://amazon-clone-sneha-ghosh-techisopod.vercel.app/api",
   "STRIPE_SECRET_KEY": "sk_test_placeholder",
