@@ -4,7 +4,7 @@
 @tailwind utilities;
 
 
-/* Carousel CSS */
+/* Carousel CSS 
 .auto-carousel {
     position: relative;
     animation-name: slide;
@@ -98,3 +98,4 @@ ol {
     overflow-x: scroll;
     scroll-behavior: smooth;
 }
+*/
