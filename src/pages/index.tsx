@@ -41,22 +41,21 @@ export default function Home({ productData }: Props) {
           <ul className="slide-carousel">
             <li><img src="/amazon assets/bed1.png" className="slide-img" alt="bed1" /></li>
             <li><img src="/amazon assets/bed2.png" className="slide-img" alt="bed2" /></li>
-            <div><img src="/amazon assets/bed3.png" className="slide-img" alt="bed3" /></div>
-            <div><img src="/amazon assets/bed4.png" className="slide-img" alt="bed4" /></div>
-            <div><img src="/amazon assets/bed5.png" className="slide-img" alt="bed5" /></div>
-            <div><img src="/amazon assets/bed6.png" className="slide-img" alt="bed6" /></div>
-            <div><img src="/amazon assets/bed7.png" className="slide-img" alt="bed7" /></div>
-            <div><img src="/amazon assets/bed8.png" className="slide-img" alt="bed8" /></div>
-            <div><img src="/amazon assets/bed9.png" className="slide-img" alt="bed9" /></div>
-            <div><img src="/amazon assets/bed10.png" className="slide-img" alt="bed10" /></div>
-            <div><img src="/amazon assets/bed11.png" className="slide-img" alt="bed11" /></div>
-            <div><img src="/amazon assets/bed12.png" className="slide-img" alt="bed12" /></div>
-            <div><img src="/amazon assets/bed13.png" className="slide-img" alt="bed13" /></div>
-            <div><img src="/amazon assets/bed14.png" className="slide-img" alt="bed14" /></div>
-            <div><img src="/amazon assets/bed16.png" className="slide-img" alt="bed16" /></div>
-            <div><img src="/amazon assets/bed17.png" className="slide-img" alt="bed17" /></div>
-            <div><img src="/amazon assets/bed18.png" className="slide-img" alt="bed18" /></div>
-          </Carousel>
+            <li><img src="/amazon assets/bed3.png" className="slide-img" alt="bed3" /></li>
+            <li><img src="/amazon assets/bed4.png" className="slide-img" alt="bed4" /></li>
+            <li><img src="/amazon assets/bed5.png" className="slide-img" alt="bed5" /></li>
+            <li><img src="/amazon assets/bed6.png" className="slide-img" alt="bed6" /></li>
+            <li><img src="/amazon assets/bed7.png" className="slide-img" alt="bed7" /></li>
+            <li><img src="/amazon assets/bed8.png" className="slide-img" alt="bed8" /></li>
+            <li><img src="/amazon assets/bed9.png" className="slide-img" alt="bed9" /></li>
+            <li><img src="/amazon assets/bed10.png" className="slide-img" alt="bed10" /></li>
+            <li><img src="/amazon assets/bed11.png" className="slide-img" alt="bed11" /></li>
+            <li><img src="/amazon assets/bed12.png" className="slide-img" alt="bed12" /></li>
+            <li><img src="/amazon assets/bed13.png" className="slide-img" alt="bed13" /></li>
+            <li><img src="/amazon assets/bed14.png" className="slide-img" alt="bed14" /></li>
+            <li><img src="/amazon assets/bed16.png" className="slide-img" alt="bed16" /></li>
+            <li><img src="/amazon assets/bed17.png" className="slide-img" alt="bed17" /></li>
+            <li><img src="/amazon assets/bed18.png" className="slide-img" alt="bed18" /></li>
           </ul>
         </div>
         {/* Other Components */}
