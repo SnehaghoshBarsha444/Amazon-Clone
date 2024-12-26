@@ -1,4 +1,6 @@
-module.exports = {
+import type { Config } from "tailwindcss";
+
+const config: Config = {
   content: [
     "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
@@ -6,7 +8,7 @@ module.exports = {
   ],
   theme: {
     extend: {
-      screens: {
+      screens:{
         xs: "320px",
         sm: "375px",
         sml: "500px",
@@ -29,3 +31,4 @@ module.exports = {
   },
   plugins: [],
 };
+export default config;
